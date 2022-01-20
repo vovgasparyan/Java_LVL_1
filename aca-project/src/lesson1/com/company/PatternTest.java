@@ -1,4 +1,4 @@
-package com.aca.homework.week2.pattern;
+package lesson1.com.company;
 
 import java.util.Arrays;
 

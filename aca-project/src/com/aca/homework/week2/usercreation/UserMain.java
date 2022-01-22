@@ -16,8 +16,12 @@ public class UserMain {
         user3.name = "Nicolas";
         user3.height = 175;
 
-        user1.printUser(user1);
-        user2.printUser(user2);
-        user3.printUser(user3);
+        printUser(user1);
+        printUser(user2);
+        printUser(user3);
+    }
+
+    public static void printUser(User user) {
+        System.out.println("The name is: " + user.name + ", " + user.name + "'s height is: " + user.height);
     }
 }

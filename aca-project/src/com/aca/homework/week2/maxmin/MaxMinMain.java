@@ -5,20 +5,19 @@ import java.util.Scanner;
 public class MaxMinMain {
 
     public static void main(String[] args) {
-        MaxMin maxMin;
-        maxMin = longNumbers(4000, 2500);
+        MaxMin maxMin = longNumbers(4000, 2500);
 
         System.out.println("Printing the object maxMin: \n" + maxMin + "\n");
-        System.out.println("The maximum value from method longNumbers is: " + maxMin.max);
-        System.out.println("The minimum value from method longNumbers is: " + maxMin.min);
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the maximum value:");
-        maxMin.max = scanner.nextLong();
+        System.out.println("Enter the first value:");
+        long i = scanner.nextLong();
 
-        System.out.println("Enter the minimum value:");
-        maxMin.min = scanner.nextLong();
+        System.out.println("Enter the second value:");
+        long j = scanner.nextLong();
+
+        maxMin = longNumbers(i, j);
 
         System.out.println("The maximum value is: " + maxMin.max);
         System.out.println("The minimum value is: " + maxMin.min);
@@ -27,8 +26,13 @@ public class MaxMinMain {
 
     public static MaxMin longNumbers(long i, long j) {
         MaxMin maxMin = new MaxMin();
-        maxMin.max = i;
-        maxMin.min = j;
+        if (i > j) {
+            maxMin.max = i;
+            maxMin.min = j;
+        } else {
+            maxMin.max = j;
+            maxMin.min = i;
+        }
         return maxMin;
     }
 }

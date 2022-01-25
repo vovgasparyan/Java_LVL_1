@@ -1,4 +1,4 @@
-package week2.lesson4;
+package com.aca.classroom.week2.lesson4;
 
 import java.util.Scanner;
 

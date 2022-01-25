@@ -1,4 +1,4 @@
-package lesson1.com.company;
+package com.aca.classroom.company;
 
 public class Primitives {
 

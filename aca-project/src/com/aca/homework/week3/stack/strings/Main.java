@@ -4,12 +4,17 @@ public class Main {
 
     public static void main(String[] args) {
         Stack stack = new Stack();
+        System.out.println("Starting method push()");
+        stack.push("main");
+        stack.push("push");
+        stack.push("push");
+        stack.push("push");
 
-        stack.push(3);
-
-        stack.pop();
-        stack.pop();
-        stack.pop();
-        stack.pop();
+        System.out.println("Starting method pop()");
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
     }
 }

@@ -1,40 +1,27 @@
 package com.aca.homework.week3.stack.strings;
 
-import java.util.Scanner;
-
 public class Stack {
 
-    private String[] strings;
-    private static int index = 0;
+
+    private static int index = 1;
+    private static int i = 0;
+    private String[] strings = new String[10];
 
 
-    public void push(int stringCount) {
-        this.strings = new String[stringCount];
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the " + stringCount + " strings");
-        for (int i = 0; i < stringCount; i++) {
-            String string = scanner.nextLine();
-            this.strings[i] = string;
-            index++;
-        }
-        for (int i = 0; i < stringCount; i++) {
-            System.out.println(this.strings[i]);
-        }
+    public void push(String string) {
+        this.strings[i] = string;
+        System.out.println(strings[i]);
+        i++;
+        index++;
     }
 
-    public void pop () {
-        System.out.println();
-        System.out.println(index);
-        if (index == 0) {
+    public String pop() {
+        i--;
+        if (i < 0) {
             this.strings = null;
-            System.out.println("pop: ");
-            index = 0;
-        } else {
-            for (int i = index - 1; i >= 0 ; i--) {
-                System.out.println("pop:" + this.strings[i]);
-            }
-            index--;
+            return "empty";
         }
-    }
+        return this.strings[i];
 
+    }
 }

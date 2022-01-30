@@ -5,9 +5,11 @@ public class CarMain {
     public static void main(String[] args) {
 
         Car[] cars = addPorscheCarManufacture();
-        String str = carsManufacturedAfter2010(cars);
+        String[] str = carsManufacturedAfter2010(cars);
 
-        System.out.println(str);
+        for (String strings : str) {
+            System.out.println(strings);
+        }
 
     }
 
@@ -24,13 +26,17 @@ public class CarMain {
         return cars;
     }
 
-    public static String carsManufacturedAfter2010(Car[] cars) {
-        StringBuilder carsList = new StringBuilder();
+    public static String[] carsManufacturedAfter2010(Car[] cars) {
+        int yearsManufacturedAfter2010 = 2021 - 2010;
+        int j = 0;
+        String[] strings = new String[yearsManufacturedAfter2010];
+
         for (Car car : cars) {
             if (car.year >= 2010) {
-                carsList.append(car.brand).append(" ").append(car.year).append("\n");
+                strings[j] = car.brand + " " + car.year;
+                j++;
             }
         }
-        return carsList.toString();
+        return strings;
     }
 }

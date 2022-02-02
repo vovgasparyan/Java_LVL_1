@@ -2,8 +2,6 @@ package com.aca.homework.week3.stack.strings;
 
 public class Stack {
 
-
-    private static int index = 1;
     private static int i = 0;
     private String[] strings = new String[10];
 
@@ -12,7 +10,6 @@ public class Stack {
         this.strings[i] = string;
         System.out.println(strings[i]);
         i++;
-        index++;
     }
 
     public String pop() {

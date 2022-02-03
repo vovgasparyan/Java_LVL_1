@@ -30,6 +30,8 @@ public class Image {
     public void draw(int i, int j) {
         if ((i > this.horizonLength - 1) || (j > this.verticalLength - 1)) {
             System.out.println("Your input values are invalid!");
+        } else if ((i < 0) || (j < 0)) {
+            System.out.println("Please input positive values");
         } else {
             this.drawObject[i][j] = '*';
         }

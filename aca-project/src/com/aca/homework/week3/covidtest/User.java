@@ -5,7 +5,7 @@ public class User {
     String code;
     String name;
 
-    public String print() {
+    public String getPrintTest() {
         return this.name + "'s code is: " + this.code;
     }
 }

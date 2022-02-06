@@ -6,7 +6,7 @@ public class CovidTest {
     User user;
 
     public void print() {
-        String userPrint = this.user.print();
+        String userPrint = this.user.getPrintTest();
         if (this.positive) {
             System.out.println("The covid test result of " + user.name + " is positive. " + userPrint);
         } else {

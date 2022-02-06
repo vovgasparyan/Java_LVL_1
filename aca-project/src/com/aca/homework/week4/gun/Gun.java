@@ -4,7 +4,7 @@ public class Gun {
 
     private static int cartridges = 10;
 
-    public static void fire() {
+    public void fire() {
         if (cartridges == 0) {
             System.out.println("Cartridge is empty! Please load cartridge to fire.");
         } else {
@@ -13,7 +13,7 @@ public class Gun {
         }
     }
 
-    public static void loadCartridge() {
+    public void loadCartridge() {
         if (cartridges > 0) {
             System.out.println("Cartridge is not empty! You can fire until cartridge empty");
         } else {
@@ -23,21 +23,22 @@ public class Gun {
 
     public static void main(String[] args) {
 
-        fire();
-        fire();
-        fire();
-        fire();
-        fire();
-        fire();
-        fire();
-        fire();
-        fire();
-        loadCartridge();
-        fire();
-        fire();
-        loadCartridge();
-        fire();
-        fire();
+        Gun gun = new Gun();
 
+        gun.fire();
+        gun.fire();
+        gun.fire();
+        gun.fire();
+        gun.fire();
+        gun.fire();
+        gun.fire();
+        gun.loadCartridge();
+        gun.fire();
+        gun.fire();
+        gun.fire();
+        gun.fire();
+        gun.loadCartridge();
+        gun.fire();
+        gun.fire();
     }
 }

@@ -5,17 +5,16 @@ public class CarMain {
     public static void main(String[] args) {
 
         Car[] cars = addPorscheCarManufacture();
-        String[] str = carsManufacturedAfter2010(cars);
+        Car[] cars1 = carsManufacturedAfter2010(cars);
 
-        for (String strings : str) {
-            System.out.println(strings);
+        for (Car car : cars1) {
+            System.out.println(car.brand + " " + car.year);
         }
 
     }
 
     public static Car[] addPorscheCarManufacture() {
-        int years = 2021 - 1980;
-        Car[] cars = new Car[years];
+        Car[] cars = new Car[41];
         for (int i = 0; i < cars.length; i++) {
             Car porsche = new Car();
             int year = 1980;
@@ -26,17 +25,19 @@ public class CarMain {
         return cars;
     }
 
-    public static String[] carsManufacturedAfter2010(Car[] cars) {
-        int yearsManufacturedAfter2010 = 2021 - 2010;
+    public static Car[] carsManufacturedAfter2010(Car[] cars) {
         int j = 0;
-        String[] strings = new String[yearsManufacturedAfter2010];
-
-        for (Car car : cars) {
-            if (car.year >= 2010) {
-                strings[j] = car.brand + " " + car.year;
+        int yearForQuery = 2010;
+        Car[] carsObject = new Car[11];
+        for (Car value : cars) {
+            Car car = new Car();
+            if (value.year >= 2010) {
+                car.brand = "Porsche";
+                car.year = yearForQuery++;
+                carsObject[j] = car;
                 j++;
             }
         }
-        return strings;
+        return carsObject;
     }
 }

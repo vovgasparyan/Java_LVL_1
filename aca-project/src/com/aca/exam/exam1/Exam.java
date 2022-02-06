@@ -6,9 +6,9 @@ public class Exam {
 
     public int maxValue() {
         int maxNumber = this.numberOfArrays[0];
-        for (int numberOfArray : this.numberOfArrays) {
-            if (maxNumber < numberOfArray) {
-                maxNumber = numberOfArray;
+        for (int i = 1; i < this.numberOfArrays.length; i++) {
+            if (maxNumber < this.numberOfArrays[i]) {
+                maxNumber = this.numberOfArrays[i];
             }
         }
         return maxNumber;
@@ -32,8 +32,8 @@ public class Exam {
         return multiplyFirstValue;
     }
 
-    public int numbersAverage() {
-        int sumOfNumbers = 0;
+    public double numbersAverage() {
+        double sumOfNumbers = 0;
         for (int numberOfArray : this.numberOfArrays) {
             sumOfNumbers += numberOfArray;
         }
@@ -46,23 +46,20 @@ public class Exam {
 
     public void printNElement(int element) {
         int numbersCount = this.numberOfArrays.length;
-        if (element > numbersCount) {
-            System.out.println("Incorrect element number");
+        if ((element > numbersCount) || (element < 0)) {
+            System.out.println("Էլեմենտի սխալ համար\nՄուտքագրեք ծրագրի համարը");
         } else {
             System.out.println(this.numberOfArrays[element]);
         }
     }
 
     public int zeroValueCount() {
-        int zeroCount = 0;
-        StringBuilder stringForCheck = new StringBuilder();
-        for (int i = 0; i < this.numberOfArrays.length; i++) {
-            stringForCheck.append(this.numberOfArrays[i]);
-            if (stringForCheck.charAt(i) == '0') {
-                zeroCount++;
-            }
+        StringBuilder checkString = new StringBuilder();
+
+        for (int numberOfArray : this.numberOfArrays) {
+            checkString.append(numberOfArray);
         }
-        return zeroCount;
+        return checkString.length() - checkString.toString().replaceAll("0", "").length();
     }
 
     public void setNumberOfArrays(int[] inputArray) {

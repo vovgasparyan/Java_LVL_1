@@ -11,26 +11,31 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        int index = 0;
         for (int i = 0; i < 4; i++) {
             System.out.println("Enter pistol name");
             String name = scanner.next();
 
+            Guns gun = null;
             if (Objects.equals(name, "air")) {
-                Guns guns1 = new AirPistol(name);
-                guns[i] = guns1;
+                gun = new AirPistol(name);
             } else if (Objects.equals(name, "makarov")) {
-                Guns guns1 = new MakarovPistol(name);
-                guns[i] = guns1;
+                gun = new MakarovPistol(name);
             } else if (Objects.equals(name, "nagant")) {
-                Guns guns1 = new NagantPistol(name);
-                guns[i] = guns1;
+                gun = new NagantPistol(name);
             } else {
                 System.out.println(name + " is not found in GunStore");
+                index--;
+            }
+            index++;
+            if (gun != null) {
+                guns[index] = gun;
             }
         }
 
         for (int i = 0; i < guns.length; i++) {
-            guns[i].shoot();
+            System.out.println(guns[i]);
+
         }
     }
 }

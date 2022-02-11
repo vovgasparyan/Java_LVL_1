@@ -27,15 +27,17 @@ public class Main {
                 System.out.println(name + " is not found in GunStore");
                 index--;
             }
-            index++;
+
             if (gun != null) {
                 guns[index] = gun;
             }
+            index++;
         }
 
-        for (int i = 0; i < guns.length; i++) {
-            System.out.println(guns[i]);
-
+        for (Guns guns1 : guns) {
+            if (guns1 != null) {
+                guns1.shoot();
+            }
         }
     }
 }

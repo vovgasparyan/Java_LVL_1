@@ -13,8 +13,11 @@ public class Main {
         double width;
         double weight;
 
-        Car[] cars = new Car[2];
-        for (int i = 0; i < 2; i++) {
+        Car[] cars = new Car[5];
+
+        int index = 0;
+
+        for (int i = 0; i < cars.length; i++) {
             System.out.println("Enter the number " + (i + 1) + " car's brand");
             brand = scanner.next();
 
@@ -29,16 +32,24 @@ public class Main {
                 weight = scanner.nextDouble();
 
                 Car car = new Car(brand, color, width, weight);
-                cars[i] = car;
+                cars[index] = car;
             } else {
-                break;
+                System.out.println(brand + " is not found in this class.");
+                index--;
             }
-
+            index++;
         }
 
-        for (int i = 0; i < cars.length; i++) {
-            System.out.println(cars[i].getBrand() + " " + cars[i].getColor() + " " + cars[i].getWidth() +
-                    " " + cars[i].getWeight());
+        System.out.println("Calling method getCarsInfo:");
+        getCarsInfo(cars);
+
+    }
+
+    public static void getCarsInfo(Car[] cars) {
+        for (Car car : cars) {
+            if (car != null) {
+                System.out.println(car);
+            }
         }
     }
 }

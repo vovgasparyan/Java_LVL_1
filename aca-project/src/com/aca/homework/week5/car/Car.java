@@ -29,4 +29,9 @@ public class Car {
     public double getWeight() {
         return weight;
     }
+
+    @Override
+    public String toString() {
+        return "brand: " + brand + ", color: " + color + ", width: " + width + ", weight: " + weight;
+    }
 }

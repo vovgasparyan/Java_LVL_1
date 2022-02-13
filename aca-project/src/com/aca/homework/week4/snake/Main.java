@@ -1,5 +1,7 @@
 package com.aca.homework.week4.snake;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,13 +9,12 @@ public class Main {
         gameBoardFill(gameBoard);
 
         SnakeGame snakeGame = new SnakeGame(gameBoard, 0, 0, 2, 1);
+        snakeGame.start();
     }
 
     public static void gameBoardFill(char[][] board) {
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                board[i][j] = '0';
-            }
+        for (char[] chars : board) {
+            Arrays.fill(chars, '0');
         }
     }
 }

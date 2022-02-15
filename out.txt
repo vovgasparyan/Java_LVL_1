@@ -1,0 +1,5 @@
+Starting the test Max function test
+The result of Max function test is PASS
+Starting the test Min function test
+The result of Min function test is PASS
+Starting the test Abs function test

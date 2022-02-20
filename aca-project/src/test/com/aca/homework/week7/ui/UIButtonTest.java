@@ -4,7 +4,7 @@ class UIButtonTest {
 
     public static void main(String[] args) {
 
-        UIView button = new UIButton(5.5, 8, Colors.PURPLE);
+        UIView button = new UIButton(5.5, 8, ColorsSelector.PURPLE);
         button.click();
     }
 }

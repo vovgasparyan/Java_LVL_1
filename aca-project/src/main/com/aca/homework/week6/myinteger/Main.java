@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MyInteger myInteger1 = MyInteger.valueOf(-100);
+        MyInteger myInteger1 = MyInteger.valueOf(-200);
         MyInteger myInteger2 = MyInteger.valueOf(50);
         MyInteger myInteger3 = MyInteger.valueOf(-100);
 

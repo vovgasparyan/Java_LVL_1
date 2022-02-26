@@ -28,7 +28,7 @@ public class FixedSizeList implements List {
     @Override
     public Object get(int index) {
         if (index < 0 || index >= this.elem) {
-            return -1;
+            throw new RuntimeException();
         }
         return objects[index];
     }

@@ -1,6 +1,6 @@
 package com.aca.homework.week7.button.click;
 
-public class Button implements Action {
+public class Button {
 
     private String text;
     private Action action;
@@ -11,18 +11,11 @@ public class Button implements Action {
     }
 
     public void click() {
-        System.out.println("Clicked on the button");
+        action.doAction();
     }
 
     public String getText() {
         return text;
     }
-
-    @Override
-    public void doAction() {
-        System.out.println("Text from constructor is: " + getText());
-        this.click();
-    }
-
 
 }

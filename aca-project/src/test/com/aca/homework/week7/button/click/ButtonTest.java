@@ -7,13 +7,14 @@ public class ButtonTest {
         Action action1 = new Action() {
             @Override
             public void doAction() {
-                System.out.println("Text from anonymous Action object");
+                System.out.println("Clicked on the button.\nText from anonymous Action object");
             }
         };
 
-        Action action2 = new Button("Simple text", action1);
-
         action1.doAction();
-        action2.doAction();
+
+        Button button1 = new Button("Some text", action1);
+        button1.click();
+
     }
 }

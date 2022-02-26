@@ -19,6 +19,10 @@ public class Motorcycle {
     public boolean equals(Object obj) {
         Motorcycle motorcycle = (Motorcycle) obj;
 
+        if (obj == null || obj.getClass() != Motorcycle.class) {
+            return false;
+        }
+
         return motorcycle.motoType.equals(this.motoType);
     }
 }

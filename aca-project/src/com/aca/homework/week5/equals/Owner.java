@@ -18,6 +18,11 @@ public class Owner {
     @Override
     public boolean equals(Object obj) {
         Owner owner = (Owner) obj;
+
+        if (obj == null || obj.getClass() != Owner.class) {
+            return false;
+        }
+
         return owner.firstName.equals(this.firstName) && owner.lastName.equals(this.lastName);
     }
 

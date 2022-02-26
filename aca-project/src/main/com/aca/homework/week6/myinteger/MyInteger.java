@@ -11,8 +11,7 @@ public class MyInteger {
 
     public static MyInteger valueOf(int value) {
         if (value < -101 || value > 100) {
-            System.out.println("Insert number between -100 to 100");
-            return null;
+           return new MyInteger(value);
         }
         if (integersArray[value + 100] == null) {
             create(value);

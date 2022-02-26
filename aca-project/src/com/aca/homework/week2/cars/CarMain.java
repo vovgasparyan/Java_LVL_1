@@ -5,12 +5,11 @@ public class CarMain {
     public static void main(String[] args) {
 
         Car[] cars = addPorscheCarManufacture();
-        Car[] cars1 = carsManufacturedAfter2010(cars);
+        Car[] cars1 = carsManufactured(cars, 2010, 2020);
 
         for (Car car : cars1) {
             System.out.println(car.brand + " " + car.year);
         }
-
     }
 
     public static Car[] addPorscheCarManufacture() {
@@ -25,19 +24,24 @@ public class CarMain {
         return cars;
     }
 
-    public static Car[] carsManufacturedAfter2010(Car[] cars) {
+    public static Car[] carsManufactured(Car[] cars, int afterYear, int beforeYear) {
+        int index = 0;
+        for (int i = 0; i < cars.length; i++) {
+            if (cars[i].year > afterYear && cars[i].year <= beforeYear) {
+                index++;
+            }
+        }
+        Car[] newCars = new Car[index];
         int j = 0;
-        int yearForQuery = 2010;
-        Car[] carsObject = new Car[11];
-        for (Car value : cars) {
-            Car car = new Car();
-            if (value.year >= 2010) {
-                car.brand = "Porsche";
-                car.year = yearForQuery++;
-                carsObject[j] = car;
+        for (int i = 0; i < cars.length; i++) {
+            if (cars[i].year > afterYear && cars[i].year <= beforeYear) {
+                Car porsche = new Car();
+                porsche.brand = "Porsche";
+                porsche.year = ++afterYear;
+                newCars[j] = porsche;
                 j++;
             }
         }
-        return carsObject;
+        return newCars;
     }
 }

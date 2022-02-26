@@ -18,11 +18,11 @@ public class Main {
 
             Guns gun = null;
             if (Objects.equals(name, "air")) {
-                gun = new AirPistol(name);
+                gun = new Air(name);
             } else if (Objects.equals(name, "makarov")) {
-                gun = new MakarovPistol(name);
+                gun = new Makarov(name);
             } else if (Objects.equals(name, "nagant")) {
-                gun = new NagantPistol(name);
+                gun = new Nagant(name);
             } else {
                 System.out.println(name + " is not found in GunStore");
                 index--;

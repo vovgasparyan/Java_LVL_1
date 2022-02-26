@@ -1,8 +1,8 @@
 package com.aca.homework.week5.pistol;
 
-public class AirPistol extends Guns {
+public class Air extends Guns {
 
-    public AirPistol(String name) {
+    public Air(String name) {
         super(name);
     }
 

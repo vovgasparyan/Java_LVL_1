@@ -1,8 +1,8 @@
 package com.aca.homework.week5.pistol;
 
-public class NagantPistol extends Guns {
+public class Nagant extends Guns {
 
-    public NagantPistol(String name) {
+    public Nagant(String name) {
         super(name);
     }
 

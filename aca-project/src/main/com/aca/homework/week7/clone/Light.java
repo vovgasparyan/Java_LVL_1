@@ -4,19 +4,15 @@ public class Light implements Cloneable {
 
     private boolean lightState;
 
-    private static Light lightIsOn = null;
-
     public Light(boolean lightState) {
         this.lightState = lightState;
     }
 
-    public static Light turnOn(boolean light) {
-        if (light) {
-            if (lightIsOn == null) {
-                lightIsOn = new Light(true);
-            }
-            return lightIsOn;
-        }
+    public static Light ofLightOn() {
+        return new Light(true);
+    }
+
+    public static Light ofLightOff() {
         return new Light(false);
     }
 

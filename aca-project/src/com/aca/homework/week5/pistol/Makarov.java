@@ -2,8 +2,8 @@ package com.aca.homework.week5.pistol;
 
 public class Makarov extends Guns {
 
-    public Makarov(String name) {
-        super(name);
+    public Makarov(String makarov) {
+        super(makarov);
     }
 
     @Override

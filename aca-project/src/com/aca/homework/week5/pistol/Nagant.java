@@ -2,8 +2,8 @@ package com.aca.homework.week5.pistol;
 
 public class Nagant extends Guns {
 
-    public Nagant(String name) {
-        super(name);
+    public Nagant(String nagant) {
+        super(nagant);
     }
 
     @Override

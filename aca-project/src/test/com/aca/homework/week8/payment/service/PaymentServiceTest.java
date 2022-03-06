@@ -9,7 +9,6 @@ import java.lang.annotation.Annotation;
 class PaymentServiceTest {
 
     private PaymentService service;
-    private PaymentResult result;
 
     @BeforeEach
     public void setUp() {
@@ -30,13 +29,13 @@ class PaymentServiceTest {
 
     @Test
     public void testPaymentAmount() {
-        result = service.pay(550);
+        PaymentResult result = service.pay(550);
         Assertions.assertEquals(550, result.getPaidAmount());
     }
 
     @Test
     public void testDuration(){
-        result = service.pay(550);
+        PaymentResult result = service.pay(550);
         int timeProcessing = result.getTimeProcessing();
         Assertions.assertTrue(timeProcessing >= 200 && timeProcessing <= 800);
     }

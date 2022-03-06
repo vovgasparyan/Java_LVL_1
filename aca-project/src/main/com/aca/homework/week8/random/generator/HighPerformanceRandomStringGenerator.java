@@ -14,10 +14,4 @@ public class HighPerformanceRandomStringGenerator implements RandomStringGenerat
         }
         return new Result(stringBuilder.toString(), System.currentTimeMillis() - start);
     }
-
-    public static void main(String[] args) {
-        HighPerformanceRandomStringGenerator stringGenerator = new HighPerformanceRandomStringGenerator();
-        Result result = stringGenerator.randomString(30000);
-        System.out.println(result.getText().length());
-    }
 }

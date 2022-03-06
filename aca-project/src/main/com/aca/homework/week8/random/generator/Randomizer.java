@@ -8,10 +8,11 @@ public class Randomizer {
 
         char[] chars = {'a', 'b', '7', '1', '9', '-'};
         StringBuilder stringBuilder = new StringBuilder();
-        int j;
+        int index;
         for (int i = 0; i < 3; i++) {
-            j = new Random().nextInt(chars.length);
-            char ch = chars[j];
+            Random random = new Random();
+            index = random.nextInt(chars.length);
+            char ch = chars[index];
             stringBuilder.append(ch);
         }
         return stringBuilder.toString();

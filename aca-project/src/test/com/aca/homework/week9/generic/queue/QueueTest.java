@@ -44,7 +44,7 @@ class QueueTest {
     public void testConsume2TimesWhenQueueContains2Items() {
         testSubject.produce("First text");
         testSubject.produce("Second text");
-        testSubject.consume();
+        Assertions.assertEquals("First text", testSubject.consume());
         Assertions.assertEquals(testSubject.differenceOfElements(), 1);
     }
 

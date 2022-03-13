@@ -2,7 +2,7 @@ package com.aca.homework.week10.template;
 
 public class TopPageNumberAwarePageRenderer extends PageRenderer {
 
-    public void print() {
+    public void printTopPageNumberAwarePageRenderer() {
         super.printHeader();
         this.pageNumber();
         super.printPage();

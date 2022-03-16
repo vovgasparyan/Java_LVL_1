@@ -1,4 +1,4 @@
-package com.aca.homework.week10.template;
+package main.com.aca.homework.week10.template;
 
 public class PageRenderer {
 

@@ -1,12 +1,24 @@
-package com.aca.homework.week10.template;
+package main.com.aca.homework.week10.template;
 
 public class TopPageNumberAwarePageRenderer extends PageRenderer {
 
     public void printTopPageNumberAwarePageRenderer() {
-        super.printHeader();
+        this.printHeaderTopPage();
         this.pageNumber();
-        super.printPage();
-        super.printFooter();
+        this.printPageTopPage();
+        this.printFooterTopPage();
+    }
+
+    public void printHeaderTopPage() {
+        System.out.println("Header");
+    }
+
+    public void printPageTopPage() {
+        System.out.println("Page");
+    }
+
+    public void printFooterTopPage() {
+        System.out.println("Footer");
     }
 
     public void pageNumber() {

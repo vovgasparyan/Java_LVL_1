@@ -1,4 +1,4 @@
-package com.aca.homework.week9.donate;
+package main.com.aca.homework.week9.donate;
 
 public class Goods implements Donatable {
 

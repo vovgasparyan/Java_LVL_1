@@ -27,7 +27,7 @@ class ArrayListTest {
         Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, new Executable() {
             @Override
             public void execute() throws Throwable {
-                stringArrayList.get(1000);
+                stringArrayList.get(10);
             }
         });
     }

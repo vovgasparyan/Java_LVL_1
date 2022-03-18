@@ -8,13 +8,13 @@ class ArrayListTest {
 
     @Test
     public void testWhenSizeIs0() {
-        ArrayList<String> stringArrayList = new ArrayList<>();
+        List<String> stringArrayList = new ArrayList<>();
         Assertions.assertEquals(0, stringArrayList.size());
     }
 
     @Test
     public void testGetSecondObject() {
-        ArrayList<Integer> integerArrayList = new ArrayList<>();
+        List<Integer> integerArrayList = new ArrayList<>();
         integerArrayList.add(24);
         integerArrayList.add(65);
         Assertions.assertEquals(65, integerArrayList.get(1));
@@ -23,7 +23,7 @@ class ArrayListTest {
 
     @Test
     public void testArrayOutOfBounds() {
-        ArrayList<String> stringArrayList = new ArrayList<>();
+        List<String> stringArrayList = new ArrayList<>();
         Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, new Executable() {
             @Override
             public void execute() throws Throwable {

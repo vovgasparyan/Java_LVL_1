@@ -5,8 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@Repository
 public class FileSourceUserRepository implements CrudRepository<User, String> {
 
+    private static CrudRepository<User, String> fileSourceUserRepository = new FileSourceUserRepository();
+
+    public static CrudRepository<User, String> create() {
+        return fileSourceUserRepository;
+    }
 
     @Override
     public User findById(String id) {

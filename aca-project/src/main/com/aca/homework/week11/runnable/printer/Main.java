@@ -8,7 +8,7 @@ public class Main {
 
         NumberPrinterRunnable runnable = new NumberPrinterRunnable(10);
 
-        List<NumberPrinterRunnable> runnables = runnable.createRunnables();
+        List<Runnable> runnables = runnable.createRunnables();
         runnable.runAll(runnables);
 
     }

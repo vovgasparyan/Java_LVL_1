@@ -18,16 +18,16 @@ public class NumberPrinterRunnable implements Runnable {
         System.out.println(this.number);
     }
 
-    public List<NumberPrinterRunnable> createRunnables () {
-        List<NumberPrinterRunnable> runnables = new ArrayList<>();
+    public List<Runnable> createRunnables () {
+        List<Runnable> runnables = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             runnables.add(new NumberPrinterRunnable(i));
         }
         return runnables;
     }
 
-    public void runAll(List<NumberPrinterRunnable> runnables) {
-        for (NumberPrinterRunnable runnable : runnables) {
+    public void runAll(List<Runnable> runnables) {
+        for (Runnable runnable : runnables) {
             runnable.run();
         }
     }

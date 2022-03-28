@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class ArraySetTest {
 
-    private Set testSubject;
+    private com.aca.classroom.week6.lesson13.set.Set testSubject;
 
     @BeforeEach
     public void setUp() {

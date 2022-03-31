@@ -7,7 +7,7 @@ public class ThreadTermination {
 
         Thread[] threads = new Thread[2];
         for (int i = 0; i < 2; i++) {
-            threads[i] = new Thread(new MyRunnable(i));
+            threads[i] = new Thread(new MyRunnable());
             threads[i].start();
         }
         for (int i = 0; i < 2; i++) {
@@ -18,12 +18,6 @@ public class ThreadTermination {
     }
 
     private static class MyRunnable implements Runnable {
-
-        private int number;
-
-        public MyRunnable(int number) {
-            this.number = number;
-        }
 
         @Override
         public void run() {

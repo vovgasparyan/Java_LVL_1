@@ -51,9 +51,7 @@ class CarRepositoryTest {
 
     @Test
     public void testFindByVinWhenTotalCountIs0() {
-        Car car1 = new Car("DBX2003", 2018, 1);
-        String str = "DDT8890";
-        Assertions.assertNull(testSubject.findByVin("DDT8890"));
+        Assertions.assertEquals(0, testSubject.getTotalCount());
     }
 
     @Test
@@ -66,8 +64,6 @@ class CarRepositoryTest {
 
     @Test
     public void testGetTotalCountWhenThereIsNoSavedCar() {
-        Car car1 = new Car("DBX2003", 2018, 1);
-        Car car2 = new Car("SVO04T6", 2019, 2);
         Assertions.assertEquals(0, testSubject.getTotalCount());
     }
 

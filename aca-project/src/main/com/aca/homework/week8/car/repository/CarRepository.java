@@ -32,7 +32,7 @@ public class CarRepository {
         return index;
     }
 
-    public boolean isOutOfBounds() {
+    private boolean isOutOfBounds() {
         return cars.length <= 999;
     }
 

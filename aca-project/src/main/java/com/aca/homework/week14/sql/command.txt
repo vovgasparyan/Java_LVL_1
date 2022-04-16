@@ -1,0 +1,11 @@
+docker run -d postgres:9.6.12
+docker ps
+docker exec -it 101a598febff bash
+psql -U postgres
+create database testdb;
+\c testdb
+create database students (first_name varchar(100), second_name varchar(100));
+insert into students (first_name, second_name) values ('Poghos', 'Poghosyan');
+insert into students (first_name, second_name) values ('Mariam', 'Mehrabyan');
+insert into students (first_name, second_name) values ('Anna', 'Ananyan');
+select * from students;

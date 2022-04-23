@@ -3,6 +3,7 @@ docker exec -it 19ecdf90091e bash
 psql -U postgres
 create database acadb;
 \c acadb;
+
 create table if not exists users (id serial primary key, company_id int not null, username varchar(50) unique not null, firstname varchar(50) not null, lastname varchar(50) not null, registration_date date not null);
 create table if not exists companies (id serial primary key, name varchar(100) not null, price int not null, creation_date date);
 insert into companies (name, price, creation_date) values ('superAI', 100000, now());

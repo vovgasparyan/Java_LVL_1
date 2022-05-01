@@ -1,0 +1,21 @@
+docker run -d postgres:9.6.12
+docker exec -it 19ecdf90091e bash
+psql -U postgres
+create database acadb;
+\c acadb;
+
+create table if not exists users (id serial primary key, company_id int not null, username varchar(50) unique not null, firstname varchar(50) not null, lastname varchar(50) not null, registration_date date not null);
+create table if not exists companies (id serial primary key, name varchar(100) not null, price int not null, creation_date date);
+insert into companies (name, price, creation_date) values ('superAI', 100000, now());
+insert into companies (name, price, creation_date) values ('marketAC', 250000, now());
+select * from companies;
+insert into users (company_id, username, firstname, lastname, registration_date) values (1, 'janesmith', 'Jane', 'Smith', now());
+insert into users (company_id, username, firstname, lastname, registration_date) values (1, 'jackdani', 'Jack', 'Daniels', now());
+insert into users (company_id, username, firstname, lastname, registration_date) values (1, 'johny23', 'John', 'Michael', now());
+insert into users (company_id, username, firstname, lastname, registration_date) values (2, 'kimmy', 'Kim', 'Basinger', now());
+insert into users (company_id, username, firstname, lastname, registration_date) values (2, 'hero666', 'Paul', 'Young', now());
+select name from companies;
+select count(*) from companies;
+select username from users;
+select companies.name, users.firstname, users.lastname from companies inner join users on companies.id=users.company_id;
+select users.id, users.username, users.firstname, users.lastname, users.registration_date, companies.name from users inner join companies on companies.id=users.company_id WHERE companies.name='superAI';

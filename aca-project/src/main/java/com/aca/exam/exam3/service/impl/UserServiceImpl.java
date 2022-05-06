@@ -41,7 +41,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getById(Long id) {
-
         Assert.notNull(id, "The id should not be null");
 
         LOGGER.info("Call user for id provided - {}", id);
@@ -56,4 +55,5 @@ public class UserServiceImpl implements UserService {
         LOGGER.info("Successfully retrieved the user for the provided id - {}, result - {}", id, user);
         return user;
     }
+
 }

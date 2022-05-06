@@ -3,39 +3,32 @@ package com.aca.exam.exam3.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "plates")
+@Table(name = "userplates")
 public class UserPlateNumber {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "numbers", unique = true, nullable = false, length = 6)
-    private String number;
-
-    @Column(name = "numberstatus", nullable = false)
-    private String numberStatus;
-
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    public UserPlateNumber(String number, String numberStatus, User user) {
-        this.number = number;
-        this.numberStatus = numberStatus;
+    @OneToOne
+    @JoinColumn(name = "plate_id", nullable = false)
+    private Plate plate;
+
+    public UserPlateNumber(User user, Plate plate) {
         this.user = user;
+        this.plate = plate;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public User getUser() {
@@ -46,11 +39,11 @@ public class UserPlateNumber {
         this.user = user;
     }
 
-    public String getNumberStatus() {
-        return numberStatus;
+    public Plate getPlate() {
+        return plate;
     }
 
-    public void setNumberStatus(String numberStatus) {
-        this.numberStatus = numberStatus;
+    public void setPlate(Plate plate) {
+        this.plate = plate;
     }
 }

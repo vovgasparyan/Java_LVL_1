@@ -8,10 +8,10 @@ import java.util.Objects;
 public class Image {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "blobId", nullable = false)
+    @Column(name = "blob_id", nullable = false)
     private String blobId;
 
     @ManyToOne

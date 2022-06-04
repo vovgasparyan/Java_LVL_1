@@ -32,7 +32,7 @@ public class PostServiceImpl implements PostService {
         Post post = postRepository.save(new Post(
                         params.getTitle(),
                         params.getDescription(),
-                        userService.getById(params.getUser_id())
+                        userService.getById(params.getUserId())
                 )
         );
         LOGGER.info("Successfully created a post for the provided params - {}", params);

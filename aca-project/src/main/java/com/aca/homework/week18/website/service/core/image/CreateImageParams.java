@@ -1,5 +1,7 @@
 package com.aca.homework.week18.website.service.core.image;
 
+import io.jsonwebtoken.lang.Assert;
+
 import java.util.Objects;
 
 public class CreateImageParams {
@@ -8,6 +10,8 @@ public class CreateImageParams {
     private Long postId;
 
     public CreateImageParams(String blobId, Long postId) {
+        Assert.notNull(blobId, "The blobId value should not be null");
+        Assert.notNull(postId, "The postId value should not be null");
         this.blobId = blobId;
         this.postId = postId;
     }

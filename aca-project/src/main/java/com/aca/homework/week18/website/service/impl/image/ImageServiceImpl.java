@@ -41,7 +41,7 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     public List<Image> getByUserId(Long id) {
-        Assert.notNull(id, "User should not be null");
+        Assert.notNull(id, "User id should not be null");
         LOGGER.info("Getting all the images from user - {}", id);
         List<Post> postList = postService.getAllByUserId(id);
         List<Image> imageList = new LinkedList<>();
